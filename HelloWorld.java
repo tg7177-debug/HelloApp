@@ -4,19 +4,17 @@ public class HelloWorld {
         if (args.length == 0) {
             System.out.println("Hello, World!");
         } else {
-            System.out.print("Hello, ");
+            String result = "";
 
-            boolean first = true;
-
+            // Enhanced for loop
             for (String name : args) {
-                if (!first) {
-                    System.out.print(", ");
-                }
-                System.out.print(name);
-                first = false;
+                result += name + ", ";
             }
 
-            System.out.println("!");
+            // Remove trailing ", " using substring
+            result = result.substring(0, result.length() - 2);
+
+            System.out.println("Hello, " + result + "!");
         }
     }
 }
