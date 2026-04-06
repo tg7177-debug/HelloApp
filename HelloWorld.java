@@ -1,14 +1,19 @@
 public class HelloWorld {
     public static void main(String[] args) {
 
-        String name;
-
-        if (args.length > 0 && !args[0].isEmpty()) {
-            name = args[0];
+        if (args.length == 0) {
+            System.out.println("Hello World");
         } else {
-            name = "World";
+            System.out.print("Hello ");
+            
+            for (int i = 0; i < args.length; i++) {
+                System.out.print(args[i]);
+                
+                // Add comma between names (except last)
+                if (i < args.length - 1) {
+                    System.out.print(", ");
+                }
+            }
         }
-
-        System.out.println("Hello " + name);
     }
 }
